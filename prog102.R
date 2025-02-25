@@ -18,7 +18,7 @@ hotday_temperature <- kefj_temperature[hotday_idx]
 hotday_exposure <- kefj_exposure[hotday_idx]
 plot_kefj(hotday_datetime, hotday_temperature, hotday_exposure)
 # P2: Fill in the blanks below to write the Alaskan datetime utility function.
-extract_datetime <- function(Alaskan_datetime) {
+convert_to_alaska <- function(Alaskan_datetime) {
   Alaskan_datetime_output <- as.POSIXct(Alaskan_datetime, tz= "Etc/GMT+8")
     return(Alaskan_datetime_output)
 }
@@ -27,8 +27,8 @@ extract_datetime("2020-02-02 16:00")
 
 # P3: Make a copy of your code from P1 and edit it to plot the temperature and
 # exposure for "Aialik" on 2012-06-01
-Aialik_day_start <- as.POSIXct("2020-02-02 00:00:00 -08", tz = "Etc/GMT+8")
-Aialik_day_end <- as.POSIXct("2020-02-02 23:59:00 -0", tz = "Etc/GMT+8")
+Aialik_day_start <- as.POSIXct("2012-06-01 00:00:00 -08", tz = "Etc/GMT+8")
+Aialik_day_end <- as.POSIXct("2012-06-01 23:59:00 -0", tz = "Etc/GMT+8")
 Aialik_site <- kefj_site == "Aialik" &
   kefj_datetime >= Aialik_day_start &
   kefj_datetime <= Aialik_day_end
@@ -133,4 +133,4 @@ extract_date <- function(site, start, end) {
 # Prog101 has many more variable defenitions which allows room for more errors too
 # and Prog 102. In Prog 102 Functions makes it easier to read and maintain and if
 # we make an error we only have to correct it once
-
+# ALana worked with me
